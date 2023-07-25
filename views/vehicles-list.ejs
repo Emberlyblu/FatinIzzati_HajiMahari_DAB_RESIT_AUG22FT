@@ -1,0 +1,37 @@
+<%- include('./partials/button-listgroup.ejs') %>
+<%- include('./partials/vehicles-table-header.ejs') %>
+<% vehicles.forEach(function(vehicle) { %>
+    <div class="row px-3 py-1 w-100">
+      <span class="col py-1 bg-light">
+        <%=vehicle.id%>
+      </span>
+      <span class="col py-1 bg-light">
+        <%=vehicle.registrationNo%>
+      </span>
+      <span class="col py-1 bg-light">
+        <%=vehicle.make%>
+      </span>
+      <span class="col py-1 bg-light">
+        <%=vehicle.model%>
+      </span>
+      <span class="col py-1 bg-light">
+        <%=vehicle.Colour%>
+      </span>
+      <span class="col py-1 bg-light">
+        <%=vehicle.VehicleType%>
+      </span>
+      <span class="col py-1 bg-light">
+        <%=vehicle.Features%>
+      </span>
+      <span class="col py-1 bg-light">
+        <%= new Date(vehicle.lastServiceDate).toISOString().split('T')[0] %>
+      </span>
+      <span class="col py-1 bg-light">
+        <%=vehicle.rented ? 'Rented' : 'Available'%>
+      </span>
+      <span class="col py-1 bg-light">
+        <%=vehicle.ServiceStatus%>
+      </span>
+      <%- include('./partials/rental-buttons.ejs', {user: user, vehicle: vehicle}) %>
+    </div>
+  <% }); %>

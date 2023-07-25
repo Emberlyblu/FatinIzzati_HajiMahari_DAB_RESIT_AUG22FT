@@ -1,0 +1,12 @@
+<span class="col py-1 bg-light text-center">
+  <% if (user && user.roleId === 2 && vehicle.rented === 0 &&
+  vehicle.ServiceStatus === 'Serviced') { %>
+  <button class="btn-sm btn-warning" onclick="rentvehicle(<%=vehicle.id%>)">
+    Rent
+  </button>
+  <% } %> <% if (user && user.roleId === 1) { %>
+  <button class="btn-sm btn-danger" onclick="cancelrental(<%=vehicle.id%>)">
+    Cancel Rental
+  </button>
+  <% } %>
+</span>

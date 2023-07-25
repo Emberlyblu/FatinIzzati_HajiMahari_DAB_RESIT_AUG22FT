@@ -1,0 +1,18 @@
+<div class="list-group">
+    <div class="row px-3 py-1 w-100 text-center">
+      <span class="col py-1 bg-light ">
+        <button class="btn-sm btn-success" onclick="sqlQuery1()">Popular Vehicle Types</button>
+      </span>
+      <span class="col py-1 bg-light ">
+        <button class="btn-sm btn-success" onclick="sqlQuery4()">Currently Rented Vehicles</button>
+      </span>
+      <span class="col py-1 bg-light ">
+        <button class="btn-sm btn-success" onclick="sqlQuery2()" <% if (!user || user.roleId !== 1) { %> disabled <% } %>>Vehicles requiring service</button>
+      </span>    
+      <span class="col py-1 bg-light ">
+        <button class="btn-sm btn-success" onclick="sqlQuery3()">Cruise Control</button>
+      </span>
+      <span class="col py-1 bg-light ">
+        <button class="btn-sm btn-warning" onclick="allVehicles()">All Vehicles</button>
+      </span>
+    </div>
